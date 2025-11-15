@@ -6,10 +6,23 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === 'GET') {
-    res.status(200).json(projects);
+  // CORS FIX
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  // Handle preflight request
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
+  // Your actual GET handler
+  if (req.method === "GET") {
+    return res.status(200).json(projects);
   } else {
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.setHeader("Allow", ["GET"]);
+    return res
+      .status(405)
+      .end(`Method ${req.method} Not Allowed`);
   }
 }
