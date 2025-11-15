@@ -6,7 +6,7 @@ const projects = [
     description: "My personal portfolio built in Next.js",
     techStack: ["Next.js", "Tailwind", "Vercel"],
     projectUrl: "https://www.abdulrehan.me",
-    image: "/images/project_1.png" 
+    image: "https://portfolio-projects-api-eight.vercel.app/images/project_1.jpg" 
   },
   {
     id: 2,
@@ -14,7 +14,7 @@ const projects = [
     description: "A full-stack e-commerce application",
     techStack: ["Next.js", "Node.js", "MongoDB"],
     projectUrl: "https://www.abdulrehan.me",
-    image: "/images/project_2.png"
+    image: "https://portfolio-projects-api-eight.vercel.app/images/project_1.jpg"
   }
 ];
 
